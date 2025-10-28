@@ -1,0 +1,35 @@
+import turtle #start of code
+bob=turtle.Turtle()
+screen=turtle.Screen()
+screen.bgcolor("yellow")  #background color
+bob.penup()
+bob.goto(100,175)
+bob.setheading(0)
+bob.pendown()
+for i in range(2): #forloops
+  bob.forward(20) #rectangle
+  bob.right(90)
+  bob.forward(90)
+  bob.right(90)
+bob.penup()
+bob.goto(-100,175)
+bob.pendown()
+for i in range(2): #forloops
+  bob.forward(20)
+  bob.right(90)
+  bob.forward(90)
+  bob.right(90)
+bob.penup()
+bob.goto(-200,100)
+bob.right(90)
+bob.pendown()
+for i in range(37): #semicircle
+  bob.forward(18)
+  bob.left(5)
+bob.penup()
+bob.goto(25,30)
+bob.setheading(180)
+bob.pendown()
+for i in range(3): #triangle
+  bob.forward(50)
+  bob.right(120)
