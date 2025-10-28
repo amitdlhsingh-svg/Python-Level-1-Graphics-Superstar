@@ -1,0 +1,54 @@
+import turtle
+import random
+t=turtle.Turtle()
+screen=turtle.Screen()
+
+def randomize():
+  x=random.randint(-200,200)
+  y=random.randint(-200,200)
+  r=random.randint(0,255)
+  g=random.randint(0,255)
+  b=random.randint(0,255)
+  t.penup()
+  t.goto(x,y)
+  t.pendown()
+  t.color(r,g,b)
+def square():
+  randomize()
+  size=random.randint(50,250)
+  for i in range(4):
+    t.forward(size)
+    t.right(90)
+
+def triangle():
+  randomize()
+  size=random.randint(50,250)
+  for i in range(3):
+    t.forward(size)
+    t.right(120)
+    
+def circle():
+ randomize()
+ size=random.randint(50,250)
+ for i in range(36):
+    t.foward(size)
+    t.right(10)
+
+def octagon():
+  randomize()
+  size=random.randint(50,250)
+  for i in range(8):
+    t.forward(size)
+    t.right(360/8)
+
+def erase():
+  t.clear()
+
+screen.onkey(square,"Up")
+screen.onkey(triangle,"Down")
+screen.onkey(circle,"Right")
+screen.onkey(octagon,"Left")
+screen.onkey(erase,"E")
+
+screen.listen()
+t.goto(0,0)
