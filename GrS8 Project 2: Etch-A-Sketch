@@ -1,0 +1,29 @@
+import turtle
+t=turtle.Turtle()
+screen=turtle.Screen()
+
+
+def forward():
+  t.forward(50)
+
+def backward():
+  t.backward(50)
+
+def left():
+  t.left(20)
+  
+def right():
+  t.right(20)
+
+def erase():
+  t.clear()
+
+screen.onkey(forward,"Up")
+screen.onkey(backward,"Down")
+screen.onkey(right,"Right")
+screen.onkey(left,"Left")
+screen.onkey(erase,"E")
+
+screen.listen()
+
+t.goto(0,0)
