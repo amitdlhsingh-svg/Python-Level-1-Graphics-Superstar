@@ -1,0 +1,25 @@
+import turtle #start
+import random
+t=turtle.Turtle()
+def randomSpot(): #fuctions
+  x=random.randint(-200,200)
+  y=random.randint(-200,200)
+  t.penup()
+  t.goto(x,y)
+  t.pendown()
+def randomColor():
+  r=random.randint(0,255)
+  g=random.randint(0,255)
+  b=random.randint(0,255)
+  t.color(r,g,b)
+def reset():
+  t.clear()
+  t.goto(0,0)
+  t.color("black")
+  t.setheading(0)
+def allrandom():
+  randomSpot()
+  randomColor()
+
+allrandom() #function code
+reset() #end
