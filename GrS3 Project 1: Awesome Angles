@@ -1,0 +1,7 @@
+import turtle
+bob=turtle.Turtle()
+length=100
+degrees=90
+bob.forward(length*2.5)
+bob.left(degrees)
+bob.forward(length)
