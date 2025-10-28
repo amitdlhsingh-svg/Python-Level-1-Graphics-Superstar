@@ -1,0 +1,16 @@
+import turtle #start
+import random
+t=turtle.Turtle()
+t.speed(0)
+for i in range(4): #nested loop
+  l=30
+  r=random.randint(0,255) #color
+  g=random.randint(0,255)
+  b=random.randint(0,255)
+  t.color(r,g,b)
+  for i in range(3):
+    for i in range(4):
+      t.forward(l)
+      t.right(90)
+    l+=20 #add 20 each time
+  t.right(90) #end
