@@ -1,0 +1,32 @@
+import turtle
+import random
+bob=turtle.Turtle()
+# What are the two booleans?
+#True and False
+
+# Write an if statement with a True condition that moves the turtle forward 50 steps.
+if 2 == 2:
+  bob.forward(50)
+
+# Change your condition to compare 3 and 1 with a comparison operator.
+if 3 > 1:
+  bob.forward(50)
+
+# Change your condition to use 2 comparison operators and either an and or an or.
+if 5>1 and 2 >= 2:
+  bob.forward(50)
+
+# This is the code that moves the turtle to a random place and then makes it turn 360 degrees if it is in Qudrant I or II
+bob.penup()
+x=random.randint(-100,100)
+y=random.randint(-100,100)
+bob.goto(x,y)
+bob.pendown()
+if bob.ycor() >=0:
+  bob.right(360)
+  
+
+# Explain how the above code works:
+# first the turtle goes to a random position and then when it goes to quadrand 1 or 2 it starts to turn 360 degrees with the code that makes bob turn right ninety dgrees
+# Explain how we use an or statement to check if it is in Qudrant I, II, or III
+# we use axcor and ycor to see where our turtle is because this code helps to figure out the exact coordinate of each.
