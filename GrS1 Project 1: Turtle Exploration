@@ -1,0 +1,22 @@
+#aarav
+import turtle
+bob=turtle.Turtle() #name is bob
+bob.forward(50) #this is where you start drawing square
+bob.right(90)
+bob.forward(50)
+bob.right(90)
+bob.forward(50)
+bob.right(90) 
+bob.forward(50) #This is where the square ends
+bob.penup()
+bob.goto(100,100) 
+bob.pendown()
+bob.color("red") 
+bob.begin_fill()
+bob.right(90) #where triangle starts
+bob.forward(50)
+bob.right(120)
+bob.forward(50)
+bob.right(120)
+bob.forward(50) #where triangle ends
+bob.end_fill()
