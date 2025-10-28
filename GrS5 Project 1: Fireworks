@@ -1,0 +1,15 @@
+import turtle#start
+import random
+t=turtle.Turtle()
+t.speed(0) #speed
+length=20 #variable
+while True:
+  r=random.randint(0,255) #random
+  g=random.randint(0,255)
+  b=random.randint(0,255)
+  t.forward(length)
+  t.goto(0,0)
+  t.right(10)
+  length=length+1 #line bigger
+  t.color(r,g,b) #color
+  #end 
