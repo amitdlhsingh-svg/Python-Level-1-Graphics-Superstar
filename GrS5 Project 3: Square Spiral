@@ -1,0 +1,16 @@
+import turtle #start
+import random
+t=turtle.Turtle()
+t.speed(0) #speed
+linelength=10
+counter=0
+while counter<50: #while loop
+  r=random.randint(0,250)
+  g=random.randint(0,250)
+  b=random.randint(0,250)
+  t.color(r,g,b)
+  t.forward(linelength)
+  t.right(90)
+  linelength+=5
+  counter+=1
+#end  
