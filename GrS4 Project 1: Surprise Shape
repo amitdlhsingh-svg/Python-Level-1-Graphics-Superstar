@@ -1,0 +1,27 @@
+import turtle
+import random
+bob=turtle.Turtle()
+bob.speed(0)
+r=random.randint(0,255)
+g=random.randint(0,255)
+b=random.randint(0,255)
+bob.color(r,g,b)
+num=random.randint(0,3)
+bob.begin_fill()
+if num == 0:
+  for i in range(4):
+    bob.forward(100)
+    bob.right(90)
+if num == 1:
+  for i in range(3):
+    bob.forward(100)
+    bob.right(120)
+if num == 2:
+  for i in range(6):
+    bob.forward(20)
+    bob.right(60)
+if num == 3:
+  for i in range(36):
+    bob.forward(20)
+    bob.right(10)
+bob.end_fill()
