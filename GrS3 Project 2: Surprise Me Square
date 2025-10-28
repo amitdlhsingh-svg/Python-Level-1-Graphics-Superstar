@@ -1,0 +1,19 @@
+import turtle #satrt of code
+import random #random
+bob=turtle.Turtle()
+x=random.randint(-300,300) #variables
+y=random.randint(-300,300)
+z=random.randint(-300,300)
+r=random.randint(0,255)
+g=random.randint(0,255)
+b=random.randint(0,255)
+bob.penup()
+bob.goto(x,y)
+bob.pendown()
+bob.fillcolor(r,g,b) #colors
+bob.begin_fill()
+for i in range(4): #foreloop
+  bob.forward(z)
+  bob.left(90)
+bob.end_fill()
+bob.penup() #end
