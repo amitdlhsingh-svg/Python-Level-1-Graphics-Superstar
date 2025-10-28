@@ -1,0 +1,28 @@
+import turtle #start of code
+import random
+bob=turtle.Turtle()
+bob.penup()
+x=random.randint(-50,50) #random 
+y=random.randint(-50,50)
+bob.goto(x,y)
+bob.pendown()
+if bob.xcor() >= 0 and bob.ycor() >=0: #helps to write where the turtle is at
+  bob.color("blue")
+  for i in range(4): #forloop
+    bob.forward(90)
+    bob.right(90)
+if bob.xcor() <= 0 and bob.ycor() >=0:
+  bob.color("orange")
+  for i in range(4):
+    bob.forward(90)
+    bob.right(90)
+if bob.xcor() <= 0 and bob.ycor() <=0:
+  bob.color("green")
+  for i in range(36):
+    bob.forward(10)
+    bob.right(10)
+if bob.xcor() >= 0 and bob.ycor() <=0:
+  bob.color("yellow")
+  for i in range(4):
+    bob.forward(90)
+    bob.right(90) #end of code
