@@ -1,0 +1,33 @@
+import turtle
+t=turtle.Turtle()
+
+def drawCircle(size): #Define
+  for i in range(36):
+    t.forward(size)
+    t.right(10)
+
+t.penup()     #large circle
+t.goto(0,-30)
+t.pendown()
+drawCircle(15)
+t.penup()
+t.goto(0,83)
+t.pendown()
+drawCircle(10) #medium circle
+t.penup()
+t.goto(0,150)
+t.pendown()
+drawCircle(6) #small circle
+t.penup()
+t.goto(-10,137) #left eye
+t.pendown()
+t.goto(-10,120)
+t.penup()
+t.goto(10,137)  #right eye
+t.pendown()
+t.goto(10,120)
+t.penup()
+t.goto(-10,107) #mouth
+t.pendown()
+t.forward(40)
+#end
