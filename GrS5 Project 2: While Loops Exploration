@@ -1,0 +1,27 @@
+import turtle #Start
+t=turtle.Turtle() #turtles
+r=turtle.Turtle()
+t.shape("turtle") #code to change shape of turtle
+t.color("green")
+t.penup()
+t.goto(-200,0)
+t.pendown()
+r.penup()
+r.goto(50,50)
+r.pendown()
+r.color("red")
+r.begin_fill()
+for i in range(8): #for loop
+  r.forward(50)
+  r.right(45)
+r.end_fill()
+r.color("white")
+r.penup()
+r.goto(75,-20)
+r.pendown()
+r.write("STOP", align="center", font=("Arial", 16, "bold italic"))
+r.ht()
+while t.xcor() <0: #to make turtle stop
+  t.forward(1)
+  t.write(t.xcor(), align="center", font=("Arial", 16, "bold italic"))
+  t.clear() #end
