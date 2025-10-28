@@ -1,0 +1,36 @@
+import turtle #start
+t=turtle.Turtle() #turtle
+screen=turtle.Screen()
+screen.bgcolor("black") #background
+t.speed(0)
+def drawHouse(): #function
+  t.fillcolor("purple") #for loop
+  t.begin_fill()
+  for i in range(4):
+    t.forward(40)
+    t.right(90)
+  t.end_fill()
+  t.backward(5)
+  t.fillcolor("orange")
+  t.begin_fill()
+  for i in range(3): #for loop
+    t.forward(50)
+    t.left(120)
+  t.end_fill()
+drawHouse() #functions
+t.penup()
+t.goto(100,100)
+t.pendown()
+drawHouse()
+t.penup()
+t.goto(-200,200)
+t.pendown()
+drawHouse()
+t.penup()
+t.goto(-100,100)
+t.pendown()
+drawHouse()
+t.penup()
+t.goto(100,-100)
+t.pendown()
+drawHouse() #end of code
