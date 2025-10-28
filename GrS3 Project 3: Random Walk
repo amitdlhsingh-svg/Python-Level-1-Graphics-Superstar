@@ -1,0 +1,15 @@
+import turtle #start
+import random #random
+bob=turtle.Turtle()
+bob.shape("turtle") #shape of turtle
+for i in range(100): #forloop
+  s=random.randint(0,10) #variables
+  x=random.randint(10,40)
+  r=random.randint(0,255)
+  g=random.randint(0,255)
+  b=random.randint(0,255)
+  a=random.randint(0,360)
+  bob.forward(x) #movement and randmize
+  bob.color(r,g,b)
+  bob.setheading(a)
+  bob.pensize(s) #end
