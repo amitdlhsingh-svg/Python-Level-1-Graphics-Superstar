@@ -1,0 +1,10 @@
+import turtle
+import random
+screen=turtle.Screen()
+def drawRect():
+  r=random.randint(0,255
+  g=random.randint(0,255)
+  b=random.randint(0,255)
+  t.begin_fill()
+  t.color(r,g,b)
+  t.end_fill()
