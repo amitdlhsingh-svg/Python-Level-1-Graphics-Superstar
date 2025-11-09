@@ -9,6 +9,10 @@ def drawTriangle(sideLength):
     for i in range(3):
       t.forward(sideLength)
       t.right(120)
-      
+
+sideLength = 20      
 drawSquare(100)
 drawTriangle(200)
+for i in range(10):
+  drawSquare(sideLength)
+  sideLength += 5
