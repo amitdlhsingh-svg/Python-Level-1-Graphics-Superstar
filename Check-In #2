@@ -1,0 +1,39 @@
+import turtle
+zebra=turtle.Turtle()
+screen=turtle.Screen()
+zebra.speed(0)
+sideLength=10
+counter = 0
+#while counter < 10: 
+    #zebra.forward(sideLength)
+    #zebra.left(90)
+    #if sideLength <= 30:
+      #sideLength += 5
+      #counter += 1
+# zebra.penup()
+# zebra.goto(100,-100)
+# zebra.pendown()
+# for i in range(4):
+#   for i in range(4):
+#     zebra.forward(sideLength)
+#     zebra.right(90)
+#   sideLength += 10
+def moveForward50():
+  zebra.forward(50)
+
+def drawSquare(sideLength):
+  for i in range(4):
+    zebra.forward(sideLength)
+    zebra.right(90)
+
+def drawTriangle():
+  for i in range(3):
+    zebra.forward(90)
+    zebra.right(120)
+
+screen.onkey(moveForward50,"right")
+screen.onkey(drawTriangle,"up")
+screen.onkey(drawTriangle,"A")
+drawSquare(40)
+
+screen.listen()
