@@ -1,0 +1,21 @@
+import turtle
+import random
+t=turtle.Turtle()
+t.colormode(255)
+t.speed(0)
+r=random.randint(0,255)
+g=random.randint(0,255)
+b=random.randint(0,255)
+t.color(r,g,b)
+for i in range(6):
+  t.goto(0,0)
+  for i in range(10):
+    t.forward(10)
+    t.right(45)
+    t.forward(15)
+    t.backward(15)
+    t.left(90)
+    t.forward(15)
+    t.backward(15)
+    t.right(45)
+  t.left(60)
