@@ -1,0 +1,10 @@
+import turtle #turtle is alive
+bolb=turtle.Turtle() #name your turtle
+bolb.setheading(300)#direction
+bolb.speed(0) #speedy
+sidelength=10 #sidelength
+for i in range(50): # nested loop
+  for i in range(3): #loop
+    bolb.forward(sidelength)#inside
+    bolb.right(120) #inside
+  sidelength = sidelength + 10 #inside
