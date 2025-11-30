@@ -1,0 +1,17 @@
+import turtle
+import random
+t=turtle.Turtle()
+t.speed(0)
+number=random.randint(0,3)
+if number == 0:
+  for i in range(4):
+    t.forward(40)
+    t.right(90)
+elif number == 1:
+  for i in range(3):
+    t.forward(30)
+    t.left(120)
+else:
+  for i in range(36):
+    t.forward(30)
+    t.right(10)
