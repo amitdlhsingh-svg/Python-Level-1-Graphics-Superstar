@@ -1,0 +1,7 @@
+import turtle
+colors = []
+colors.append("blue")
+colors.append("green")
+colors.append("red")
+print(colors)
+print(colors[1])
