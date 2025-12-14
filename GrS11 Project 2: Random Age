@@ -1,0 +1,29 @@
+import turtle
+import random
+t=turtle.Turtle()
+t.penup()
+p=turtle.Turtle()
+p.penup()
+t.shape("turtle")
+t.goto(0,0)
+p.ht()
+p.goto(25,0)
+t.setheading(90)
+age=random.randint(0,80)
+if age <= 2:
+  p.write("I'm a baby turtle!",font=("Arial",25,"normal"))
+
+elif age <= 5:
+  p.write("I'm a toddler turtle!",font=("Arial",25,"normal"))
+
+elif age <= 12:
+  p.write("I'm a kiddie turtle!",font=("Arial",25,"normal"))
+
+elif age <= 19:
+  p.write("I'm a teen turtle!",font=("Arial",25,"normal"))
+
+elif age <= 50:
+  p.write("I'm an adult turtle!",font=("Arial",25,"normal"))
+
+elif age <= 80:
+  p.write("I'm an old turtle",font=("Arial",25,"normal"))
