@@ -1,0 +1,18 @@
+import turtle
+import random
+turtles=[]
+for i in range(10):
+  t=turtle.Turtle()
+  t.shape("turtle")
+  t.colormode(255)
+  turtles.append(t)  
+for turtle in turtles:
+  t.speed(0)
+  r=random.randint(0,255)
+  g=random.randint(0,255)
+  b=random.randint(0,255)
+  rotation=random.randint(0,360)
+  turtle.goto(0,0)
+  turtle.color(r,g,b)
+  turtle.setheading(rotation)
+  turtle.forward(200)
