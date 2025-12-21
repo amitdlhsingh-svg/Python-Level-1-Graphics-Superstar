@@ -1,7 +1,22 @@
 import turtle
-colors = []
+t=turtle.Turtle()
+t.pensize(30)
+colors = [] 
 colors.append("blue")
 colors.append("green")
 colors.append("red")
-print(colors)
-print(colors[1])
+colors.append("purple")
+colors.append("yellow")
+for color in colors:
+  t.color(color)
+  t.forward(10)
+if "purple" in colors:
+  t.write("Yes", font = ("Arial", 100, "normal"))
+else:
+  t.write("No", font = ("Arial", 100, "normal"))
+# print(colors)
+# print(colors[1])
+# colors[1]="yellow"
+# print(colors)
+# colors.remove("yellow")
+# print(colors)
