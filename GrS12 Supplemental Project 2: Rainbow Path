@@ -1,0 +1,34 @@
+import turtle
+import random
+t=turtle.Turtle()
+t.shape("turtle")
+colors = ["white",
+  "white smoke",
+  "gainsboro",
+  "light gray",
+  "silver",
+  "dark gray",
+  "gray",
+  "dim gray",
+  "black",
+  "slate gray",
+  "alice blue",
+  "royal blue",
+  "blue",
+  "medium blue",
+  "navy",
+  "dark blue",
+  "midnight blue",
+  "light blue",
+  "deep sky blue",
+  "dodger blue",
+  "powder blue",
+  "sky blue",
+  "light sky blue",
+  "steel blue"]
+for color in colors:
+  steps=random.randint(3,7)
+  turn=random.randint(-10,10)
+  t.color(color)
+  t.forward(steps)
+  t.right(turn)
