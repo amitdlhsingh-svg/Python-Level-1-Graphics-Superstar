@@ -1,0 +1,26 @@
+import turtle #start of code
+import random
+
+
+t = turtle.Turtle() 
+l = [] #list
+
+for i in range(15):  #num
+  l.append(random.randint(0,10))
+
+t.penup()
+t.goto(-100, 0)
+
+for num in l: #1st line
+  t.write(num, font = ("Arial",18,"normal"))
+  t.forward(30)
+
+t.goto(-100,-30) #2nd line
+for num in l:
+   t.write(num+10, font = ("Arial",18,"normal"))
+   t.forward(40)
+
+t.goto(-100,-60) #3rd line
+for num in l:
+  t.write((num+10)*10, font = ("Arial",18,"normal"))
+  t.forward(40) #end of code
