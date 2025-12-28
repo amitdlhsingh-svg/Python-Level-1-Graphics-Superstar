@@ -1,0 +1,34 @@
+import turtle
+t=turtle.Turtle()
+f=turtle.Turtle()
+r=turtle.Turtle()
+screen=turtle.Screen()
+f.speed(0)
+t.shape("turtle")
+t.penup()
+f.color("red")
+f.penup()
+f.goto(-200,200)
+f.pendown()
+
+score=0
+r.penup()
+r.goto(-200,210)
+r.pendown()
+
+for i in range(4):
+  f.forward(400)
+  f.right(90)
+
+def moveright():
+  t.right(5)
+def moveleft():
+  t.left(5)
+
+screen.onkey(moveright,"Right")
+screen.onkey(moveleft,"Left")
+
+screen.listen()
+while True:
+  t.forward(10)
+  
