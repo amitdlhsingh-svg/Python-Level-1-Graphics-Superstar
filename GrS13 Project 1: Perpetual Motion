@@ -1,0 +1,17 @@
+import turtle
+t=turtle.Turtle()
+screen=turtle.Screen()
+t.shape("turtle")
+t.penup()
+
+def moveright():
+  t.right(5)
+def moveleft():
+  t.left(5)
+
+screen.onkey(moveright,"Right")
+screen.onkey(moveleft,"Left")
+
+screen.listen()
+while True:
+  t.forward(10)
