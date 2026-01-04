@@ -1,0 +1,26 @@
+import turtle
+import random
+t=turtle.Turtle()
+screen=turtle.Screen()
+t.speed(0)
+t.penup()
+t.goto(-200,200)
+t.pendown()
+for i in range(4):
+  t.forward(400)
+  t.right(90)
+t.ht()
+balls=[]
+for i in range(10):
+  x=random.randint(-200,200)
+  y=random.randint(-200,200)
+  r=turtle.Turtle()
+  r.color("red")
+  r.shape("circle")
+  r.penup()
+  r.goto(x,y)
+  balls.append(r)
+
+while True:
+  for ball in balls:
+    ball.forward(10)
