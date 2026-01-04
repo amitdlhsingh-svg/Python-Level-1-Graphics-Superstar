@@ -1,0 +1,13 @@
+import turtle
+t=turtle.Turtle()
+screen=turtle.Screen()
+screen.tracer(0)
+
+while True:
+  for i in range(36):
+    t.forward(20)
+    t.right(10)
+  screen.update()
+  t.clear()
+  t.forward(20)
+  t.right(10)
