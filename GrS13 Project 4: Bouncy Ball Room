@@ -1,7 +1,8 @@
-import turtle
+import turtle #start
 import random
 t=turtle.Turtle()
 screen=turtle.Screen()
+screen.tracer(0)
 t.speed(0)
 t.penup()
 t.goto(-200,200)
@@ -11,16 +12,26 @@ for i in range(4):
   t.right(90)
 t.ht()
 balls=[]
-for i in range(10):
+for i in range(10): #forloop
   x=random.randint(-200,200)
   y=random.randint(-200,200)
+  direction=random.randint(0,360)
   r=turtle.Turtle()
   r.color("red")
   r.shape("circle")
   r.penup()
   r.goto(x,y)
+  r.setheading(direction)
   balls.append(r)
 
-while True:
-  for ball in balls:
-    ball.forward(10)
+def Collisions(ball): #function
+  if ball.xcor() >= 200 or ball.xcor() <= -200:
+    ball.right(180)
+  elif ball.ycor() >= 200 or ball.ycor() <= -200:
+    ball.right(180)
+
+while True: #while true loop
+ for ball in balls:
+   Collisions(ball)
+   ball.forward(10)
+ screen.update()
