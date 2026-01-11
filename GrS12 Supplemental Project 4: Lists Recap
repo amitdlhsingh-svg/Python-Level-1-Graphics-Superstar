@@ -1,0 +1,31 @@
+import turtle
+import random
+t=turtle.Turtle()
+
+# Explain what a list is:
+# a collection of items that show what are used in a situation.
+
+
+# Make an empty list named turtles
+turtles=[]
+
+
+# Add 3 turtles to turtles
+for i in range(3):
+  red=turtle.Turtle()
+  turtles.append(red)
+
+# Loop through turtles and have each turtle move 50 pixels forward
+for turtle in turtles:
+    t.forward(50)
+
+
+# Edit your loop so that the turtles turn a random amount of degrees before going forward
+for t in turtles:
+    t.right(random.randint(0, 360))
+    t.forward(50)
+
+
+
+# Explain why lists are useful:
+#Because they let you control and store lots of information.
