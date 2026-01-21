@@ -1,0 +1,44 @@
+import turtle
+import random
+t=turtle.Turtle()
+r=turtle.Turtle()
+screen=turtle.Screen()
+t.colormode(255)
+r.colormode(255)
+r.penup()
+r.goto(random.randint(-200,200), random.randint(-200,200))
+r.pendown()
+t.penup()
+t.goto(random.randint(-200,200), random.randint(-200,200))
+t.pendown()
+t.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
+r.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
+
+def tRight(): 
+  t.right(10)
+
+def tLeft():
+  t.left(10)
+
+def rRight():
+  r.right(10)
+
+def rLeft():
+  r.left(10)
+
+def ifCollided():
+  if abs(t.xcor()-r.xcor()) <10 and abs(t.ycor()-r.ycor())<10:
+    t.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
+    r.color(random.randint(0,255), random.randint(0,255), random.randint(0,255))
+    r.write("Collision")
+
+screen.onkey(tRight,"right")
+screen.onkey(tLeft,"Left")
+screen.onkey(rRight,"A")
+screen.onkey(rLeft,"D")
+
+screen.listen()
+while True:
+  t.forward(1)
+  r.forward(1)
+  ifCollided()
