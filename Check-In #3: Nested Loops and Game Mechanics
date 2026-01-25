@@ -1,0 +1,28 @@
+import turtle
+import random
+lion=turtle.Turtle()
+lion.colormode(255)
+screen=turtle.Screen()
+#screen.tracer(0)
+counter=0
+num=random.randint(0,60)
+# for i in range(3):
+#   lion.penup()
+#   lion.goto(random.randint(-400,400), random.randint(-400,400))
+#   lion.pendown()
+#   for i in range(3):
+#     lion.forward(30)
+#     lion.right(120)
+#   #screen.update()
+
+while True:
+  counter += 1
+  if counter==5:
+    break
+
+if num<=20:
+  lion.color("red")
+elif num >= 21 and num<=40:
+  lion.color("yellow")
+else:
+  lion.color("green")
