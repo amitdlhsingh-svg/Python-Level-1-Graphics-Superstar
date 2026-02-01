@@ -26,3 +26,14 @@ elif num >= 21 and num<=40:
   lion.color("yellow")
 else:
   lion.color("green")
+
+whales=[]
+
+for i in range(3):
+  t=turtle.Turtle()
+  whales.append(t)
+
+for whale in whales:
+  whale.backward(30)
+
+  
