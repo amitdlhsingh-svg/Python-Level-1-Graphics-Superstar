@@ -1,0 +1,63 @@
+import turtle #start
+import random
+t=turtle.Turtle()
+screen=turtle.Screen()
+screen.tracer(0)
+t.speed(0)
+t.penup()
+t.goto(-200,200)
+t.pendown()
+f=turtle.Turtle()
+f.shape("turtle")
+g=turtle.Turtle()
+g.penup()
+g.goto(-200,210)
+lives=10
+g.write("lives:" +str(lives), font = ("Arial", 16, "normal"))
+for i in range(4):
+  t.forward(400)
+  t.right(90)
+t.ht()
+balls=[]
+for i in range(10): #forloop
+  x=random.randint(-200,200)
+  y=random.randint(-200,200)
+  direction=random.randint(0,360)
+  r=turtle.Turtle()
+  r.color("red")
+  r.shape("circle")
+  r.penup()
+  r.goto(x,y)
+  r.setheading(direction)
+  balls.append(r)
+
+def Collisions(turtle): #function
+  if turtle.xcor() >= 200 or turtle.xcor() <= -200:
+    turtle.right(180)
+  elif turtle.ycor() >= 200 or turtle.ycor() <= -200:
+    turtle.right(180)
+
+def right():
+  f.right(10)
+def left():
+  f.left(10)
+screen.onkey(right,"right")
+screen.onkey(left,"left")
+screen.listen()
+while lives >= 1: #while true loop
+  f.penup()
+  f.forward(5)
+  Collisions(f)
+  for ball in balls:
+    if abs(ball.xcor()-f.xcor()) <10 and abs(ball.ycor()-f.ycor())<10:
+      lives -= 1
+      g.clear()
+      g.write("lives:" +str(lives), font = ("Arial", 16, "normal"))
+      f.goto(random.randint(-200,200), random.randint(-200,200))
+    Collisions(ball)
+    ball.forward(10)
+  screen.update()
+
+g.goto(0,0)
+g.write("GAMEOVER", font = ("Arial", 16, "normal"))
+screen.update()
