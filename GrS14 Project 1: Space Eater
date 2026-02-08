@@ -5,15 +5,19 @@ screen=turtle.Screen()
 screen.tracer(0)
 t.speed(0)
 t.penup()
-t.goto(-200,200)
+screen.bgcolor("Black")
+t.goto(-200,270)
 t.pendown()
 f=turtle.Turtle()
 f.shape("turtle")
+f.color("blue")
 g=turtle.Turtle()
 g.penup()
-g.goto(-200,210)
+g.color("magenta")
+g.goto(-200,280)
 score=0
 g.write("score:" +str(score), font = ("Arial", 16, "normal"))
+t.color("red")
 for i in range(4):
   t.forward(400)
   t.right(90)
@@ -21,10 +25,10 @@ t.ht()
 balls=[]
 for i in range(10): #forloop
   x=random.randint(-200,200)
-  y=random.randint(-200,200)
+  y=random.randint(-130,270)
   direction=random.randint(0,360)
   r=turtle.Turtle()
-  r.color("red")
+  r.color("cyan")
   r.shape("circle")
   r.penup()
   r.goto(x,y)
@@ -34,7 +38,7 @@ for i in range(10): #forloop
 def Collisions(turtle): #function
   if turtle.xcor() >= 200 or turtle.xcor() <= -200:
     turtle.right(180)
-  elif turtle.ycor() >= 200 or turtle.ycor() <= -200:
+  elif turtle.ycor() >= 270 or turtle.ycor() <= -130:
     turtle.right(180)
 
 def right():
@@ -44,20 +48,17 @@ def left():
 screen.onkey(right,"right")
 screen.onkey(left,"left")
 screen.listen()
-while lives >= 1: #while true loop
+while True: #while true loop
   f.penup()
   f.forward(5)
   Collisions(f)
   for ball in balls:
     if abs(ball.xcor()-f.xcor()) <10 and abs(ball.ycor()-f.ycor())<10:
-      score -= 1
+      score += 1
       g.clear()
       g.write("score:" +str(score), font = ("Arial", 16, "normal"))
-      f.goto(random.randint(-200,200), random.randint(-200,200))
+      ball.goto(random.randint(-200,200), random.randint(-130,270))
     Collisions(ball)
     ball.forward(10)
   screen.update()
-
-g.goto(0,0)
-g.write("GAMEOVER", font = ("Arial", 16, "normal"))
 screen.update()
