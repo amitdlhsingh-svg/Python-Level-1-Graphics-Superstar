@@ -1,0 +1,49 @@
+import turtle
+import random
+
+screen=turtle.Screen()
+screen.setup(width=600, height=600)
+screen.bgcolor("black")
+
+#player turtle
+t=turtle.Turtle()
+t.color("blue")
+t.penup()
+t.goto(0,-200)
+t.shapesize(5)
+t.setheading(90)
+#score turtle
+r=turtle.Turtle()
+
+r.speed(0)
+
+
+r.color("red")
+r.penup()
+r.goto(-525,430)
+r.write("Score:", font=("Arial", 32, "normal"))
+r.ht()
+
+asteroids = []
+
+for i in range(8):
+  y=random.randint(200,450)
+  x=random.randint(-400,400)
+
+  f=turtle.Turtle()
+  f.color("grey")
+  f.shape("circle")
+  f.shapesize(7)
+  #y.size(10)
+  f.penup()
+  f.goto(x,y)
+
+def right():
+  t.setx(t.xcor() + 20)
+def left():
+  t.setx(t.xcor() - 20)
+
+screen.listen()
+screen.onkey(right, "Right")
+screen.onkey(left, "Left")
+turtle.mainloop()
