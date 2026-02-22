@@ -1,29 +1,25 @@
 import turtle
 import random
-
+import time
+turtle.colormode(255)
 screen=turtle.Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
-
-#player turtle
 t=turtle.Turtle()
 t.color("blue")
 t.penup()
 t.goto(0,-200)
 t.shapesize(5)
 t.setheading(90)
-#score turtle
-r=turtle.Turtle()
-
-r.speed(0)
 
 
-r.color("red")
-r.penup()
-r.goto(-525,430)
-r.write("Score:", font=("Arial", 32, "normal"))
-r.ht()
-
+#bullet
+b=turtle.Turtle()
+b.goto((t.xcor(), t.ycor() + 20))
+b.shape("triangle")
+b.color(28, 186, 31)
+b.ht()
+bulletFlying = False
 asteroids = []
 
 for i in range(8):
@@ -34,16 +30,51 @@ for i in range(8):
   f.color("grey")
   f.shape("circle")
   f.shapesize(7)
+  asteroids.append(f)
   #y.size(10)
   f.penup()
   f.goto(x,y)
+
+#score turtle
+r=turtle.Turtle()
+
+r.speed(0)
+
+
+r.color("red")
+r.penup()
+r.goto(-560,260)
+r.write("Score:", font=("Arial", 32, "normal"))
+r.ht()
 
 def right():
   t.setx(t.xcor() + 20)
 def left():
   t.setx(t.xcor() - 20)
 
+
+
+def fire():
+  global bulletFlying
+  if bulletFlying == False:
+    bulletFlying = True
+    b.penup()
+    b.goto(t.xcor(), t.ycor() + 20)
+    b.showturtle()
+    b.setheading(90)
+    b.speed(10)
+    b.forward(1000)
+
 screen.listen()
 screen.onkey(right, "Right")
 screen.onkey(left, "Left")
+screen.onkey(fire, "space")
+screen.tracer(0)
+
+while True:
+  if bulletFlying == True:
+    b.sety(b.ycor()+20)
+  screen.update()    
+  time.sleep(0.02)
+
 turtle.mainloop()
