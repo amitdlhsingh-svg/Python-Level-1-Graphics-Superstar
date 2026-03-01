@@ -1,6 +1,7 @@
 import turtle
 import random
 import time
+gameRunning = True 
 turtle.colormode(255)
 screen=turtle.Screen()
 screen.setup(width=600, height=600)
@@ -11,6 +12,16 @@ t.penup()
 t.goto(0,-200)
 t.shapesize(5)
 t.setheading(90)
+health=100
+
+#health turtle
+h=turtle.Turtle()
+h.speed(0)
+h.color("green")
+h.penup()
+h.goto(-560,220)
+h.write("Health: 100", font=("Arial", 32, "normal"))
+h.ht()
 
 
 #bullet
@@ -44,7 +55,7 @@ r.speed(0)
 r.color("red")
 r.penup()
 r.goto(-560,260)
-r.write("Score:", font=("Arial", 32, "normal"))
+r.write("Score: 0", font=("Arial", 32, "normal"))
 r.ht()
 
 def right():
@@ -63,18 +74,33 @@ def fire():
     b.showturtle()
     b.setheading(90)
     b.speed(10)
-    b.forward(1000)
+    
 
 screen.listen()
 screen.onkey(right, "Right")
 screen.onkey(left, "Left")
 screen.onkey(fire, "space")
-screen.tracer(0)
 
-while True:
+while health > 0:
   if bulletFlying == True:
     b.sety(b.ycor()+20)
+    if b.ycor() > 300:
+      b.ht()
+      bulletFlying = False
+      b.goto(t.xcor(), t.ycor() + 20)
+  for asteroid in asteroids:
+    asteroid.sety(asteroid.ycor() - 5)
+    if asteroid.ycor() < -300:
+      asteroid.goto(random.randint(-400,400), random.randint(200,450))
+      health -= 10
+      h.clear()
+      h.write("Health:" + str(health), font= ("Arial", 32, "normal"))
+    if abs(t.xcor()-asteroid.xcor()) <80 and abs(t.ycor()-asteroid.ycor())<80:
+      health -= 10
+      h.clear()
+      h.write("Health:" + str(health), font= ("Arial", 32, "normal"))
+      asteroid.goto(random.randint(-400,400), random.randint(200,450))
   screen.update()    
   time.sleep(0.02)
-
+turtle.done()
 turtle.mainloop()
