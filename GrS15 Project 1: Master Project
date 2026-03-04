@@ -6,8 +6,23 @@ turtle.colormode(255)
 screen=turtle.Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
+
+
+# Add stars to the background for a space effect
+star_turtle = turtle.Turtle()
+star_turtle.ht()
+star_turtle.speed(0)
+star_turtle.penup()
+star_turtle.color("white")
+for _ in range(50):
+    x_star = random.randint(-300, 300)
+    y_star = random.randint(-300, 300)
+    star_turtle.goto(x_star, y_star)
+    star_turtle.dot(random.randint(2, 4))
+
 t=turtle.Turtle()
-t.color("blue")
+t.shape("triangle")
+t.color("white", "red")
 t.penup()
 t.goto(0,-200)
 t.shapesize(5)
@@ -38,17 +53,31 @@ for i in range(8):
   x=random.randint(-400,400)
 
   f=turtle.Turtle()
-  f.color("grey")
-  f.shape("circle")
-  f.shapesize(7)
-  asteroids.append(f)
-  #y.size(10)
   f.penup()
+  f.color("grey")
+  
+  # Create a custom shape for each asteroid to make it look realistic
+  f.begin_poly()
+  num_points = random.randint(5, 10)
+  radius = random.randint(20, 40)
+  for _ in range(num_points):
+      angle = _ * (360 / num_points)
+      r = radius + random.randint(-10, 10)
+      f.setheading(angle)
+      f.forward(r)
+  f.end_poly()
+  screen.register_shape(f"asteroid_{i}", f.get_poly())
+  f.shape(f"asteroid_{i}")
+  
+  # Randomly rotate the asteroid for variety
+  f.setheading(random.randint(0, 360))
+  
+  asteroids.append(f)
   f.goto(x,y)
 
 #score turtle
 r=turtle.Turtle()
-
+score=0
 r.speed(0)
 
 
@@ -100,7 +129,30 @@ while health > 0:
       h.clear()
       h.write("Health:" + str(health), font= ("Arial", 32, "normal"))
       asteroid.goto(random.randint(-400,400), random.randint(200,450))
+    if bulletFlying and abs(b.xcor()-asteroid.xcor()) <80 and abs(b.ycor()-asteroid.ycor())<80:
+      asteroid.goto(random.randint(-400,400), random.randint(200,450))
+      b.ht()
+      bulletFlying = False
+      score+=10
+      r.clear()
+      r.write("Score:" + str(score), font= ("Arial", 32, "normal"))
   screen.update()    
   time.sleep(0.02)
+
+
+
+if health <= 0:
+  t.ht()
+  b.ht()
+  for asteroid in asteroids:
+    asteroid.ht()
+  h.clear()
+  r.clear()
+  h.goto(-150,0)
+  h.write("Game Over", font= ("Arial", 40, "normal"))
+  
+
+
+
 turtle.done()
 turtle.mainloop()
